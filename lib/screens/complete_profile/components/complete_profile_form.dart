@@ -3,6 +3,7 @@ import 'package:shop_app/components/custom_suffix_icon.dart';
 import 'package:shop_app/components/default_button.dart';
 import 'package:shop_app/components/form_error.dart';
 import 'package:shop_app/constants.dart';
+import 'package:shop_app/screens/otp/components/otp_screen.dart';
 import 'package:shop_app/size_config.dart';
 
 class CompleteProfileForm extends StatefulWidget {
@@ -63,7 +64,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
               press: () {
                 if (_formKey.currentState.validate()) {
                   // otp ekranına git
-                  
+                  Navigator.pushNamed(context, OtpScreen.routeName);
                 }
               },
             ),

@@ -32,3 +32,19 @@ const String kFirstNameNullError = "Lütfen adınızı girin";
 const String kLastNameNullError = "Lütfen soyadınızı girin";
 const String kPhoneNumberNullError = "Lütfen telefon numaranızı girin";
 const String kAddressNullError = "Lütfen adresinizi girin";
+
+final otpInputDecoration = InputDecoration(
+  contentPadding: EdgeInsets.symmetric(
+    vertical: getProportionateScreenHeight(15),
+  ),
+  enabledBorder: outlineInputBorder(),
+  focusedBorder: outlineInputBorder(),
+  border: outlineInputBorder(),
+);
+
+OutlineInputBorder outlineInputBorder() {
+  return OutlineInputBorder(
+    borderRadius: BorderRadius.circular(15),
+    borderSide: BorderSide(color: kTextColor),
+  );
+}
