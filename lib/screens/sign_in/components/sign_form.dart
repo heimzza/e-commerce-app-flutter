@@ -21,16 +21,16 @@ class _SignFormState extends State<SignForm> {
 
   void addError({String error}) {
     if (!errors.contains(error))
-    setState(() {
-      errors.add(error);
-    });
+      setState(() {
+        errors.add(error);
+      });
   }
 
   void removeError({String error}) {
     if (errors.contains(error))
-    setState(() {
-      errors.remove(error);
-    });
+      setState(() {
+        errors.remove(error);
+      });
   }
 
   @override
@@ -61,7 +61,8 @@ class _SignFormState extends State<SignForm> {
               Text("Hatırla"),
               Spacer(),
               GestureDetector(
-                onTap: () => Navigator.pushNamed(context, ForgotPasswordScreen.routeName),
+                onTap: () => Navigator.pushNamed(
+                    context, ForgotPasswordScreen.routeName),
                 child: Text(
                   "Şifremi unuttum",
                   style: TextStyle(decoration: TextDecoration.underline),
@@ -79,7 +80,7 @@ class _SignFormState extends State<SignForm> {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
                 // if everything is OK then go to login success screen
-                if (errors.isEmpty){
+                if (errors.isEmpty) {
                   Navigator.pushNamed(context, LoginSuccessScreen.routeName);
                 }
               }
@@ -97,11 +98,11 @@ class _SignFormState extends State<SignForm> {
       onChanged: (value) {
         if (value.isNotEmpty) {
           setState(() {
-            removeError(error:kPasswordNullError);
+            removeError(error: kPasswordNullError);
           });
         } else if (value.length >= 6) {
           setState(() {
-            removeError(error:kShortPasswordError);
+            removeError(error: kShortPasswordError);
           });
         }
         return null;
@@ -109,12 +110,12 @@ class _SignFormState extends State<SignForm> {
       validator: (value) {
         if (value.isEmpty) {
           setState(() {
-            addError(error:kPasswordNullError);
+            addError(error: kPasswordNullError);
           });
           return "";
         } else if (value.length < 6) {
           setState(() {
-            addError(error:kShortPasswordError);
+            addError(error: kShortPasswordError);
           });
           return "";
         }
@@ -136,11 +137,12 @@ class _SignFormState extends State<SignForm> {
       onChanged: (value) {
         if (value.isNotEmpty) {
           setState(() {
-            removeError(error:kEmailNullError);
+            removeError(error: kEmailNullError);
           });
-        } else if (emailValidatorRegExp.hasMatch(value)) {
+        }
+        if (emailValidatorRegExp.hasMatch(value)) {
           setState(() {
-            removeError(error:kInvalideEmailError);
+            removeError(error: kInvalideEmailError);
           });
         }
         return null;
@@ -148,12 +150,12 @@ class _SignFormState extends State<SignForm> {
       validator: (value) {
         if (value.isEmpty) {
           setState(() {
-            addError(error:kEmailNullError);
+            addError(error: kEmailNullError);
           });
           return "";
         } else if (!emailValidatorRegExp.hasMatch(value)) {
           setState(() {
-            addError(error:kInvalideEmailError);
+            addError(error: kInvalideEmailError);
           });
           return "";
         }
