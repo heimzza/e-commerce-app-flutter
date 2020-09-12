@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shop_app/constants.dart';
+import 'package:shop_app/components/product_card.dart';
+import 'package:shop_app/models/Product.dart';
 import 'package:shop_app/size_config.dart';
 
+import 'categories.dart';
+import 'discount_banner.dart';
 import 'home_header.dart';
-import 'icon_btn_with_counter.dart';
-import 'search_field.dart';
+import 'popular_products.dart';
+import 'section_title.dart';
+import 'special_offers.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -17,12 +20,30 @@ class Body extends StatelessWidget {
             SizedBox(
               height: getProportionateScreenHeight(20),
             ),
-            HomeHeader()
+            HomeHeader(),
+            SizedBox(
+              height: getProportionateScreenHeight(30),
+            ),
+            DiscountBanner(),
+            SizedBox(
+              height: getProportionateScreenHeight(30),
+            ),
+            Categories(),
+            SizedBox(
+              height: getProportionateScreenHeight(30),
+            ),
+            SpecialOffers(),
+            SizedBox(
+              height: getProportionateScreenHeight(30),
+            ),
+            PopularProducts(),
+            SizedBox(
+              height: getProportionateScreenHeight(30),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
 
