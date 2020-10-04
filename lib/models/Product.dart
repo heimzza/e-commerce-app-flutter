@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 
 class Product {
   final String title, description;
+  final int id;
   final List<String> images;
   final List<Color> colors;
   final double rating, price;
   final bool isFavourite, isPopular;
 
   Product({
+    @required this.id,
     @required this.title,
     @required this.description,
     @required this.images,
@@ -39,6 +41,7 @@ List<Product> demoProducts = [
     rating: 4.5,
     isFavourite: true,
     isPopular: true,
+    id: 0,
   ),
   Product(
     images: [
@@ -56,6 +59,7 @@ List<Product> demoProducts = [
     rating: 4.1,
     isFavourite: false,
     isPopular: false,
+    id: 1,
   ),
   Product(
     images: [
@@ -69,10 +73,12 @@ List<Product> demoProducts = [
     ],
     title: "Eldiven",
     price: 32.49,
-    description: "description Eldiven description Eldiven description Eldiven description description description",
+    description:
+        "description Eldiven description Eldiven description Eldiven description description description",
     rating: 3.7,
     isFavourite: true,
     isPopular: true,
+    id: 2,
   ),
   Product(
     images: [
@@ -86,9 +92,11 @@ List<Product> demoProducts = [
     ],
     title: "Wireless headset",
     price: 134.99,
-    description: "description Wireless headsetWireless headsetWireless headsetWireless headsetWireless headset",
+    description:
+        "description Wireless headsetWireless headsetWireless headsetWireless headsetWireless headset",
     rating: 3.9,
     isFavourite: true,
     isPopular: true,
+    id: 3,
   ),
 ];
